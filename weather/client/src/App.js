@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import axios from "axios";
 
 function App() {
   const [city, setCity] = useState("");
@@ -10,7 +11,9 @@ function App() {
     setError("");
     setWeather(null);
     try {
-      const res = await fetch(`http://localhost:5000/api/weather?city=${city}`);
+      // const res = await fetch(`https://weather1-io-github-1.onrender.com/api/weather?city=${city}`);
+      const res = await axios.get(`https://weather1-io-github-1.onrender.com/api/weather?city=${city}`);
+
       const data = await res.json();
       if (data.error) {
         setError("City not found or server error");
