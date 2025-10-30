@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Video Background */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.6) contrast(1.1);
+}
+
+/* Container */
+.container {
+  position: relative;
+  padding: 30px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  max-width: 450px;
+  width: 90%;
+  z-index: 2;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Title */
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Search Form */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 5px;
+}
+
+input {
+  width: 70%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+  color: #222;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ffd55a, #ffeaa7);
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+/* Weather Card */
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+  color: #fff;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.temp {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+.desc {
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #f3f3f3;
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  flex-wrap: wrap;
+  font-size: 1.1rem;
+}
+
+.details p {
+  flex: 1 1 45%;
+  margin: 5px 0;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .temp {
+    font-size: 2.5rem;
+  }
+
+  input {
+    width: 65%;
+  }
+}
